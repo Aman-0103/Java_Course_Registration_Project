@@ -83,178 +83,170 @@ public class SystemInterface {
 					
 					switch(choice)
 					{
-					case 1: 
-						srv.getAllCourses(con);
-						break;
-						
-					case 2: 
-						srv.getAllStudents(con);
-						break;
-					
-					case 3:
-						try {
-							System.out.println("\nEnter Course ID to search : ");
-							int id = sc.nextInt();
-							srv.getById(con,id);
-							break;	
-						} 
-						
-						catch(InputMismatchException e) {
-							
-							System.out.println(e);
-								
-						}
-						
-					case 4:
-						try {
-							System.out.println("\nEnter Student ID to search : ");
-							int stid = sc.nextInt();
-							srv.getById1(con,stid);
+						case 1: 
+							srv.getAllCourses(con);
 							break;
-						}
-						
-						catch(InputMismatchException e) {
 							
-							System.out.println(e);
+							
+						case 2: 
+							srv.getAllStudents(con);
+							break;
+							
+						
+						case 3:
+								System.out.println("\nEnter Course ID to search : ");
+								int id = sc.nextInt();
+								srv.getById(con,id);
+								break;	
 								
-						}
+							
+						case 4:
+								System.out.println("\nEnter Student ID to search : ");
+								int stid = sc.nextInt();
+								srv.getById1(con,stid);
+								break;
+	
+							
+						case 5:
+							System.out.println("\nEnter new Course ID  : ");
+							int d = sc.nextInt();
+							
+							System.out.println("\nEnter new Course Name  : ");
+							sc.nextLine();
+							String stnm = sc.nextLine();
+							
+							System.out.println("\nEnter new Course Code  : ");
+							int cd = sc.nextInt();
+							
+							System.out.println("\nEnter new Course Instructor Name  : ");
+							sc.nextLine();
+							String instnm = sc.nextLine();
+							
+							System.out.println("\nEnter new Max Students limit  : ");
+							int maxStd = sc.nextInt();
+							
+							System.out.println("\nEnter new Course Location  : ");
+							sc.nextLine();
+							String crloc = sc.nextLine();
+							
+							System.out.println("\nEnter new Current Students  : ");
+							int curStd = sc.nextInt();
+							
+							System.out.println("\nEnter new Course Duration Limit  : ");
+							sc.nextLine();
+							String dur = sc.nextLine();
+							
+							System.out.println("\nEnter new Course price  : ");
+							int pr = sc.nextInt();
+							
+							srv.addCourse(con,d,cd,stnm,instnm,crloc, maxStd,curStd,dur,pr);
+							break;
+							
+							
+						case 6:
+							System.out.println("\nEnter new Student ID  : ");
+							int sid = sc.nextInt();
+							
+							System.out.println("\nEnter new Student Name  : ");
+							sc.nextLine();
+							String stnm1 = sc.nextLine();
+							
+							System.out.println("\nEnter new Student Age  : ");
+							int ag = sc.nextInt();
+							
+							System.out.println("\nEnter new Student Address  : ");
+							sc.nextLine();
+							String stadd = sc.nextLine();
+							
+							System.out.println("\nEnter new Student Phone Number  : ");
+							long stphno = sc.nextLong();
+							
+							System.out.println("\nEnter new Student Course  : ");
+							sc.nextLine();
+							String stcr = sc.nextLine();
+							
+							System.out.println("\nEnter new Course Code  : ");
+							int cd2 = sc.nextInt();
+							
+							System.out.println("\nEnter new Student Email ID  : ");
+							sc.nextLine();
+							String stemlid = sc.nextLine();
+							
+							srv.addStudent(con, sid, stnm1, ag, stcr, cd2, stadd, stphno, stemlid);
+							break;
+							
+							
+						case 7:
+							 
+							System.out.println("\nEnter new Course id  : ");
+							int ipd = sc.nextInt();
+							
+							System.out.println("\nEnter new Instructor Name  : ");
+							sc.nextLine();
+							String instname = sc.nextLine();
+							
+							System.out.println("\nEnter new Course Maximum Student Limit  : ");
+							int mxstud = sc.nextInt();
+							
+							System.out.println("\nEnter new Course Location  : ");
+							sc.nextLine();
+							String courloc = sc.nextLine();
+							
+							System.out.println("\nEnter new Course price  : ");
+							int prc = sc.nextInt();
+							
+							System.out.println("\nEnter new Course Duration  : ");
+							sc.nextLine();
+							String duratn = sc.nextLine();
+							
+							srv.updateCourse(con, instname, courloc, mxstud, duratn, prc, ipd);
+							break;
+							
+							
+						case 8:
+							System.out.println("\nEnter Student id  : ");
+							int ipd1 = sc.nextInt();
+							
+							System.out.println("\nEnter Student's Updated Age  : ");
+							int age1 = sc.nextInt();
+							
+							System.out.println("\nEnter Student's new Course Name  : ");
+							sc.nextLine();
+							String stdcr1 = sc.nextLine();
+							
+							System.out.println("\nEnter Student's New Course Code  : ");
+							int crcd = sc.nextInt();
+							
+							System.out.println("\nEnter Student's New Address  : ");
+							sc.nextLine();
+							String stdadd = sc.nextLine();
+							
+							System.out.println("\nEnter Student's New Phone Number  : ");
+							long stdph = sc.nextLong();
+							
+							System.out.println("\nEnter Student's New Email Id  : ");
+							sc.nextLine();
+							String stdemlid = sc.nextLine();
+							
+							srv.updateStudent(con, age1, stdcr1, crcd, stdadd, stdph, stdemlid, ipd1);
+							break;
+							
+							
+						case 9:
+							System.out.println("\nEnter new Course id  : ");
+							int ip = sc.nextInt();
+							
+							srv.deleteCourse(con, ip);
+							break;
+							
+							
+						case 10:
+							System.out.println("\nEnter new Student id  : ");
+							int stdid = sc.nextInt();
+							
+							srv.deleteStudent(con, stdid);
+							break;
 						
-					case 5:
-						System.out.println("\nEnter new Course ID  : ");
-						int d = sc.nextInt();
-						
-						System.out.println("\nEnter new Course Name  : ");
-						sc.nextLine();
-						String stnm = sc.nextLine();
-						
-						System.out.println("\nEnter new Course Code  : ");
-						int cd = sc.nextInt();
-						
-						System.out.println("\nEnter new Course Instructor Name  : ");
-						sc.nextLine();
-						String instnm = sc.nextLine();
-						
-						System.out.println("\nEnter new Max Students limit  : ");
-						int maxStd = sc.nextInt();
-						
-						System.out.println("\nEnter new Course Location  : ");
-						sc.nextLine();
-						String crloc = sc.nextLine();
-						
-						System.out.println("\nEnter new Current Students  : ");
-						int curStd = sc.nextInt();
-						
-						System.out.println("\nEnter new Course Duration Limit  : ");
-						sc.nextLine();
-						String dur = sc.nextLine();
-						
-						System.out.println("\nEnter new Course price  : ");
-						int pr = sc.nextInt();
-						
-						srv.addCourse(con,d,cd,stnm,instnm,crloc, maxStd,curStd,dur,pr);
-						break;
-						
-						
-					case 6:
-						System.out.println("\nEnter new Student ID  : ");
-						int sid = sc.nextInt();
-						
-						System.out.println("\nEnter new Student Name  : ");
-						sc.nextLine();
-						String stnm1 = sc.nextLine();
-						
-						System.out.println("\nEnter new Student Age  : ");
-						int ag = sc.nextInt();
-						
-						System.out.println("\nEnter new Student Address  : ");
-						sc.nextLine();
-						String stadd = sc.nextLine();
-						
-						System.out.println("\nEnter new Student Phone Number  : ");
-						long stphno = sc.nextLong();
-						
-						System.out.println("\nEnter new Student Course  : ");
-						sc.nextLine();
-						String stcr = sc.nextLine();
-						
-						System.out.println("\nEnter new Course Code  : ");
-						int cd2 = sc.nextInt();
-						
-						System.out.println("\nEnter new Student Email ID  : ");
-						sc.nextLine();
-						String stemlid = sc.nextLine();
-						
-						srv.addStudent(con, sid, stnm1, ag, stcr, cd2, stadd, stphno, stemlid);
-						break;
-						
-					case 7:
-						 
-						System.out.println("\nEnter new Course id  : ");
-						int ipd = sc.nextInt();
-						
-						System.out.println("\nEnter new Instructor Name  : ");
-						sc.nextLine();
-						String instname = sc.nextLine();
-						
-						System.out.println("\nEnter new Course Maximum Student Limit  : ");
-						int mxstud = sc.nextInt();
-						
-						System.out.println("\nEnter new Course Location  : ");
-						sc.nextLine();
-						String courloc = sc.nextLine();
-						
-						System.out.println("\nEnter new Course price  : ");
-						int prc = sc.nextInt();
-						
-						System.out.println("\nEnter new Course Duration  : ");
-						sc.nextLine();
-						String duratn = sc.nextLine();
-						
-						srv.updateCourse(con, instname, courloc, mxstud, duratn, prc, ipd);
-						break;
-						
-					case 8:
-						System.out.println("\nEnter Student id  : ");
-						int ipd1 = sc.nextInt();
-						
-						System.out.println("\nEnter Student's Updated Age  : ");
-						int age1 = sc.nextInt();
-						
-						System.out.println("\nEnter Student's new Course Name  : ");
-						sc.nextLine();
-						String stdcr1 = sc.nextLine();
-						
-						System.out.println("\nEnter Student's New Course Code  : ");
-						int crcd = sc.nextInt();
-						
-						System.out.println("\nEnter Student's New Address  : ");
-						sc.nextLine();
-						String stdadd = sc.nextLine();
-						
-						System.out.println("\nEnter Student's New Phone Number  : ");
-						long stdph = sc.nextLong();
-						
-						System.out.println("\nEnter Student's New Email Id  : ");
-						sc.nextLine();
-						String stdemlid = sc.nextLine();
-						
-						srv.updateStudent(con, age1, stdcr1, crcd, stdadd, stdph, stdemlid, ipd1);
-						break;
-						
-					case 9:
-						System.out.println("\nEnter new Course id  : ");
-						int ip = sc.nextInt();
-						
-						srv.deleteCourse(con, ip);
-						break;
-						
-					case 10:
-						System.out.println("\nEnter new Student id  : ");
-						int stdid = sc.nextInt();
-						
-						srv.deleteStudent(con, stdid);
-						break;
-					
 					}
 					
 					
@@ -285,90 +277,95 @@ public class SystemInterface {
 					
 					switch(choice1)
 					{
-					case 1: 
-						srv.getAllCourses(con);
-						break;
-					
-					case 2:
-						System.out.println("\nEnter Course ID to search : ");
-						int id = sc.nextInt();
-						srv.getById(con,id);
-						break;	
+						case 1: 
+							srv.getAllCourses(con);
+							break;
+							
 						
-					case 3:
-						System.out.println("\nEnter Student ID to search : ");
-						int stid = sc.nextInt();
-						srv.getById1(con,stid);
-						break;
-						
-					case 4:
-						System.out.println("\nEnter new Student ID  : ");
-						int sid = sc.nextInt();
-						
-						System.out.println("\nEnter new Student Name  : ");
-						sc.nextLine();
-						String stnm = sc.nextLine();
-						
-						System.out.println("\nEnter new Student Age  : ");
-						int ag = sc.nextInt();
-						
-						System.out.println("\nEnter new Student Address  : ");
-						sc.nextLine();
-						String stadd = sc.nextLine();
-						
-						System.out.println("\nEnter new Student Phone Number  : ");
-						long stphno = sc.nextLong();
-						
-						System.out.println("\nEnter new Student Course  : ");
-						sc.nextLine();
-						String stcr = sc.nextLine();
-						
-						System.out.println("\nEnter new Course Code  : ");
-						int cd1 = sc.nextInt();
-						
-						System.out.println("\nEnter new Student Email ID  : ");
-						sc.nextLine();
-						String stemlid = sc.nextLine();
-
-						
-						srv.addStudent(con, sid, stnm, ag, stcr, cd1, stadd, stphno, stemlid);
-						break;
-						
-					case 5:
-						 
-						System.out.println("\nEnter Student id  : ");
-						int ipd = sc.nextInt();
-						
-						System.out.println("\nEnter Student's Updated Age  : ");
-						int age2 = sc.nextInt();
-						
-						System.out.println("\nEnter Student's new Course Name  : ");
-						sc.nextLine();
-						String stdcr = sc.nextLine();
-						
-						System.out.println("\nEnter Student's New Course Code  : ");
-						int crcd1 = sc.nextInt();
-						
-						System.out.println("\nEnter Student's New Address  : ");
-						sc.nextLine();
-						String stdadd1 = sc.nextLine();
-						
-						System.out.println("\nEnter Student's New Phone Number  : ");
-						long stdph1 = sc.nextLong();
-						
-						System.out.println("\nEnter Student's New Email Id  : ");
-						sc.nextLine();
-						String stdemlid1 = sc.nextLine();
-						
-						srv.updateStudent(con, age2, stdcr, crcd1, stdadd1, stdph1, stdemlid1, ipd);
-						break;
-						
-					case 6:
-						System.out.println("\nEnter new Course ID  : ");
-						int stdid = sc.nextInt();
-						
-						srv.deleteStudent(con, stdid);
-						break;
+						case 2:
+							System.out.println("\nEnter Course ID to search : ");
+							int id = sc.nextInt();
+							srv.getById(con,id);
+							break;	
+							
+							
+						case 3:
+							System.out.println("\nEnter Student ID to search : ");
+							int stid = sc.nextInt();
+							srv.getById1(con,stid);
+							break;
+							
+							
+						case 4:
+							System.out.println("\nEnter new Student ID  : ");
+							int sid = sc.nextInt();
+							
+							System.out.println("\nEnter new Student Name  : ");
+							sc.nextLine();
+							String stnm = sc.nextLine();
+							
+							System.out.println("\nEnter new Student Age  : ");
+							int ag = sc.nextInt();
+							
+							System.out.println("\nEnter new Student Address  : ");
+							sc.nextLine();
+							String stadd = sc.nextLine();
+							
+							System.out.println("\nEnter new Student Phone Number  : ");
+							long stphno = sc.nextLong();
+							
+							System.out.println("\nEnter new Student Course  : ");
+							sc.nextLine();
+							String stcr = sc.nextLine();
+							
+							System.out.println("\nEnter new Course Code  : ");
+							int cd1 = sc.nextInt();
+							
+							System.out.println("\nEnter new Student Email ID  : ");
+							sc.nextLine();
+							String stemlid = sc.nextLine();
+	
+							
+							srv.addStudent(con, sid, stnm, ag, stcr, cd1, stadd, stphno, stemlid);
+							break;
+							
+							
+						case 5:
+							 
+							System.out.println("\nEnter Student id  : ");
+							int ipd = sc.nextInt();
+							
+							System.out.println("\nEnter Student's Updated Age  : ");
+							int age2 = sc.nextInt();
+							
+							System.out.println("\nEnter Student's new Course Name  : ");
+							sc.nextLine();
+							String stdcr = sc.nextLine();
+							
+							System.out.println("\nEnter Student's New Course Code  : ");
+							int crcd1 = sc.nextInt();
+							
+							System.out.println("\nEnter Student's New Address  : ");
+							sc.nextLine();
+							String stdadd1 = sc.nextLine();
+							
+							System.out.println("\nEnter Student's New Phone Number  : ");
+							long stdph1 = sc.nextLong();
+							
+							System.out.println("\nEnter Student's New Email Id  : ");
+							sc.nextLine();
+							String stdemlid1 = sc.nextLine();
+							
+							srv.updateStudent(con, age2, stdcr, crcd1, stdadd1, stdph1, stdemlid1, ipd);
+							break;
+							
+							
+						case 6:
+							System.out.println("\nEnter new Course ID  : ");
+							int stdid = sc.nextInt();
+							
+							srv.deleteStudent(con, stdid);
+							break;
 				
 					}
 					
